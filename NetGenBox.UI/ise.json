@@ -1,0 +1,2191 @@
+[
+    {
+        "family": "Automotive Artix7",
+        "devices": [
+            {
+                "device_name": "xa7a100t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1Q"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive CoolRunner2",
+        "devices": [
+            {
+                "device_name": "xa2c32a",
+                "speeds": [
+                    "-6",
+                    "-7"
+                ]
+            },
+            {
+                "device_name": "xa2c64a",
+                "speeds": [
+                    "-7",
+                    "-8"
+                ]
+            },
+            {
+                "device_name": "xa2c128",
+                "speeds": [
+                    "-7",
+                    "-8"
+                ]
+            },
+            {
+                "device_name": "xa2c256",
+                "speeds": [
+                    "-7",
+                    "-8"
+                ]
+            },
+            {
+                "device_name": "xa2c384",
+                "speeds": [
+                    "-10",
+                    "-11"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Artix7",
+        "devices": [
+            {
+                "device_name": "xc7a100t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7a200t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Artix7 Low Voltage",
+        "devices": [
+            {
+                "device_name": "xc7a100tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7a200tl",
+                "speeds": [
+                    "-2L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive Spartan3",
+        "devices": [
+            {
+                "device_name": "xa3s50",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s200",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s400",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s1000",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s1500",
+                "speeds": [
+                    "-4"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive Spartan3A",
+        "devices": [
+            {
+                "device_name": "xa3s200a",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s400a",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s700a",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s1400a",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive Spartan-3A DSP",
+        "devices": [
+            {
+                "device_name": "xa3sd1800a",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3sd3400a",
+                "speeds": [
+                    "-4"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive Spartan3E",
+        "devices": [
+            {
+                "device_name": "xa3s100e",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s250e",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s500e",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s1200e",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            },
+            {
+                "device_name": "xa3s1600e",
+                "speeds": [
+                    "-4",
+                    "-4Q"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive Spartan6",
+        "devices": [
+            {
+                "device_name": "xa6slx4",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx9",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx16",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx25",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx25t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx45",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx45t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx75",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx75t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-3Q",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xa6slx100",
+                "speeds": [
+                    "-2",
+                    "-2Q"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive Zynq",
+        "devices": [
+            {
+                "device_name": "xa7z010",
+                "speeds": [
+                    "-1I",
+                    "-1Q"
+                ]
+            },
+            {
+                "device_name": "xa7z020",
+                "speeds": [
+                    "-1I",
+                    "-1Q"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Kintex7",
+        "devices": [
+            {
+                "device_name": "xc7k70t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k160t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k325t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k355t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k410t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k420t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k480t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Kintex7 Low Voltage",
+        "devices": [
+            {
+                "device_name": "xc7k70tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k160tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k325tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k355tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k410tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k420tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7k480tl",
+                "speeds": [
+                    "-2L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Artix7",
+        "devices": [
+            {
+                "device_name": "xq7a100t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1M"
+                ]
+            },
+            {
+                "device_name": "xq7a200t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1M"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Kintex7",
+        "devices": [
+            {
+                "device_name": "xq7k325t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1M",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xq7k410t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1M",
+                    "-2L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Kintex7 Low Voltage",
+        "devices": [
+            {
+                "device_name": "xq7k325tl",
+                "speeds": [
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xq7k410tl",
+                "speeds": [
+                    "-2L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Space-Grade Virtex-4QV",
+        "devices": [
+            {
+                "device_name": "xqr4vsx55",
+                "speeds": [
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xqr4vfx60",
+                "speeds": [
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xqr4vfx140",
+                "speeds": [
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xqr4vlx200",
+                "speeds": [
+                    "-10"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Spartan-6Q",
+        "devices": [
+            {
+                "device_name": "xq6slx75",
+                "speeds": [
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xq6slx75t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xq6slx150",
+                "speeds": [
+                    "-2",
+                    "-2Q"
+                ]
+            },
+            {
+                "device_name": "xq6slx150t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-2Q"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Spartan-6Q Lower Power",
+        "devices": [
+            {
+                "device_name": "xq6slx75l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xq6slx150l",
+                "speeds": [
+                    "-1L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Virtex-4Q",
+        "devices": [
+            {
+                "device_name": "xq4vlx25",
+                "speeds": [
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xq4vlx40",
+                "speeds": [
+                    "-10",
+                    "-10I"
+                ]
+            },
+            {
+                "device_name": "xq4vsx55",
+                "speeds": [
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xq4vfx60",
+                "speeds": [
+                    "-10",
+                    "-10I"
+                ]
+            },
+            {
+                "device_name": "xq4vlx60",
+                "speeds": [
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xq4vfx100",
+                "speeds": [
+                    "-10I"
+                ]
+            },
+            {
+                "device_name": "xq4vlx100",
+                "speeds": [
+                    "-10I"
+                ]
+            },
+            {
+                "device_name": "xq4vlx160",
+                "speeds": [
+                    "-10I"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Virtex-5Q",
+        "devices": [
+            {
+                "device_name": "xq5vlx30t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vsx50t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vfx70t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-1M"
+                ]
+            },
+            {
+                "device_name": "xq5vlx85",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vsx95t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vfx100t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-1M"
+                ]
+            },
+            {
+                "device_name": "xq5vlx110",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vlx110t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vfx130t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vlx155t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vfx200t",
+                "speeds": [
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vlx220t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vsx240t",
+                "speeds": [
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq5vlx330t",
+                "speeds": [
+                    "-1"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Virtex-6Q",
+        "devices": [
+            {
+                "device_name": "xq6vlx130t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-1M"
+                ]
+            },
+            {
+                "device_name": "xq6vlx240t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-1M"
+                ]
+            },
+            {
+                "device_name": "xq6vsx315t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-1M"
+                ]
+            },
+            {
+                "device_name": "xq6vsx475t",
+                "speeds": [
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xq6vlx550t",
+                "speeds": [
+                    "-1"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Virtex-6Q Lower Power",
+        "devices": [
+            {
+                "device_name": "xq6vlx130tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xq6vlx240tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xq6vsx315tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xq6vsx475tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xq6vlx550tl",
+                "speeds": [
+                    "-1L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Virtex7",
+        "devices": [
+            {
+                "device_name": "xq7vx330t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1M",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xq7vx485t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1M",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xq7v585t",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1M",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xq7vx690t",
+                "speeds": [
+                    "-2I",
+                    "-1I"
+                ]
+            },
+            {
+                "device_name": "xq7vx980t",
+                "speeds": [
+                    "-2L",
+                    "-1I"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Defense-Grade Zynq",
+        "devices": [
+            {
+                "device_name": "xq7z020",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1Q"
+                ]
+            },
+            {
+                "device_name": "xq7z030",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1Q"
+                ]
+            },
+            {
+                "device_name": "xq7z045",
+                "speeds": [
+                    "-2I",
+                    "-1I",
+                    "-1Q"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Spartan3",
+        "devices": [
+            {
+                "device_name": "xc3s50",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s200",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s400",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1000",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1000l",
+                "speeds": [
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1500",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1500l",
+                "speeds": [
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s2000",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s4000",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s4000l",
+                "speeds": [
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s5000",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Spartan3A and Spartan3AN",
+        "devices": [
+            {
+                "device_name": "xc3s50a",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s50an",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s200a",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s200an",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s400a",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s400an",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s700a",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s700an",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1400a",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1400an",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Spartan-3A DSP",
+        "devices": [
+            {
+                "device_name": "xc3sd1800a",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3sd3400a",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Spartan3E",
+        "devices": [
+            {
+                "device_name": "xc3s100e",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s250e",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s500e",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1200e",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            },
+            {
+                "device_name": "xc3s1600e",
+                "speeds": [
+                    "-5",
+                    "-4"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Spartan6",
+        "devices": [
+            {
+                "device_name": "xc6slx4",
+                "speeds": [
+                    "-3",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx9",
+                "speeds": [
+                    "-3",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx16",
+                "speeds": [
+                    "-3",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx25",
+                "speeds": [
+                    "-3",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx25t",
+                "speeds": [
+                    "-3",
+                    "-4",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx45",
+                "speeds": [
+                    "-3",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx45t",
+                "speeds": [
+                    "-3",
+                    "-4",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx75",
+                "speeds": [
+                    "-3",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx75t",
+                "speeds": [
+                    "-3",
+                    "-4",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx100",
+                "speeds": [
+                    "-3",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx100t",
+                "speeds": [
+                    "-3",
+                    "-4",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx150",
+                "speeds": [
+                    "-3",
+                    "-3N",
+                    "-2"
+                ]
+            },
+            {
+                "device_name": "xc6slx150t",
+                "speeds": [
+                    "-3",
+                    "-4",
+                    "-3N",
+                    "-2"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Spartan6 Lower Power",
+        "devices": [
+            {
+                "device_name": "xc6slx4l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6slx9l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6slx16l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6slx25l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6slx45l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6slx75l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6slx100l",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6slx150l",
+                "speeds": [
+                    "-1L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Virtex4",
+        "devices": [
+            {
+                "device_name": "xc4vfx12",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx15",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vfx20",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx25",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vsx25",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vsx35",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vfx40",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx40",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vsx55",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vfx60",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx60",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx80",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vfx100",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx100",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vfx140",
+                "speeds": [
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx160",
+                "speeds": [
+                    "-12",
+                    "-11",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc4vlx200",
+                "speeds": [
+                    "-11",
+                    "-10"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Virtex5",
+        "devices": [
+            {
+                "device_name": "xc5vlx20t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx30",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vfx30t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx30t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vsx35t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx50",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx50t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vsx50t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vfx70t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx85",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx85t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vsx95t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vfx100t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx110",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx110t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vfx130t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vtx150t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx155",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx155t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vfx200t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx220",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx220t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vsx240t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vtx240t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx330",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc5vlx330t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Virtex6",
+        "devices": [
+            {
+                "device_name": "xc6vcx75t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vlx75t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vcx130t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vlx130t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vcx195t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vlx195t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vcx240t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vlx240t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vhx250t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vhx255t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vsx315t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vlx365t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vhx380t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vsx475t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vlx550t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vhx565t",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc6vlx760",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Virtex6 Lower Power",
+        "devices": [
+            {
+                "device_name": "xc6vlx75tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vlx130tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vlx195tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vlx240tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vsx315tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vlx365tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vsx475tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vlx550tl",
+                "speeds": [
+                    "-1L"
+                ]
+            },
+            {
+                "device_name": "xc6vlx760l",
+                "speeds": [
+                    "-1L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Virtex7",
+        "devices": [
+            {
+                "device_name": "xc7vx330t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vx415t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vx485t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vx550t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vh580t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-2G",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7v585t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vx690t",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vh870t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-2G",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vx980t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7vx1140t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-2G",
+                    "-2L"
+                ]
+            },
+            {
+                "device_name": "xc7v2000t",
+                "speeds": [
+                    "-2",
+                    "-1",
+                    "-2G",
+                    "-2L"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Automotive 9500XL",
+        "devices": [
+            {
+                "device_name": "xa9536xl",
+                "speeds": [
+                    "-15"
+                ]
+            },
+            {
+                "device_name": "xa9572xl",
+                "speeds": [
+                    "-15"
+                ]
+            },
+            {
+                "device_name": "xa95144xl",
+                "speeds": [
+                    "-15"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "CoolRunner2 CPLDS",
+        "devices": [
+            {
+                "device_name": "xc2c32",
+                "speeds": [
+                    "-3",
+                    "-4",
+                    "-6"
+                ]
+            },
+            {
+                "device_name": "xc2c32a",
+                "speeds": [
+                    "-4",
+                    "-6"
+                ]
+            },
+            {
+                "device_name": "xc2c64",
+                "speeds": [
+                    "-5",
+                    "-7"
+                ]
+            },
+            {
+                "device_name": "xc2c64a",
+                "speeds": [
+                    "-5",
+                    "-7"
+                ]
+            },
+            {
+                "device_name": "xc2c128",
+                "speeds": [
+                    "-6",
+                    "-7"
+                ]
+            },
+            {
+                "device_name": "xc2c256",
+                "speeds": [
+                    "-6",
+                    "-7"
+                ]
+            },
+            {
+                "device_name": "xc2c384",
+                "speeds": [
+                    "-7",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc2c512",
+                "speeds": [
+                    "-7",
+                    "-10"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "XC9500 CPLD",
+        "devices": [
+            {
+                "device_name": "xc9536",
+                "speeds": [
+                    "-5",
+                    "-7",
+                    "-10",
+                    "-15"
+                ]
+            },
+            {
+                "device_name": "xc9572",
+                "speeds": [
+                    "-7",
+                    "-10",
+                    "-15"
+                ]
+            },
+            {
+                "device_name": "xc95108",
+                "speeds": [
+                    "-7",
+                    "-10",
+                    "-15",
+                    "-20"
+                ]
+            },
+            {
+                "device_name": "xc95144",
+                "speeds": [
+                    "-7",
+                    "-10",
+                    "-15"
+                ]
+            },
+            {
+                "device_name": "xc95216",
+                "speeds": [
+                    "-10",
+                    "-15",
+                    "-20"
+                ]
+            },
+            {
+                "device_name": "xc95288",
+                "speeds": [
+                    "-10",
+                    "-15",
+                    "-20"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "XC9500XL CPLDs",
+        "devices": [
+            {
+                "device_name": "xc9536xl",
+                "speeds": [
+                    "-5",
+                    "-7",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc9572xl",
+                "speeds": [
+                    "-5",
+                    "-7",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc95144xl",
+                "speeds": [
+                    "-5",
+                    "-7",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xc95288xl",
+                "speeds": [
+                    "-6",
+                    "-7",
+                    "-10"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "CoolRunner XPLA3 CPLDS",
+        "devices": [
+            {
+                "device_name": "xcr3032xl",
+                "speeds": [
+                    "-5",
+                    "-7",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xcr3064xl",
+                "speeds": [
+                    "-6",
+                    "-7",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xcr3128xl",
+                "speeds": [
+                    "-6",
+                    "-7",
+                    "-10"
+                ]
+            },
+            {
+                "device_name": "xcr3256xl",
+                "speeds": [
+                    "-7",
+                    "-10",
+                    "-12"
+                ]
+            },
+            {
+                "device_name": "xcr3384xl",
+                "speeds": [
+                    "-7",
+                    "-10",
+                    "-12"
+                ]
+            },
+            {
+                "device_name": "xcr3512xl",
+                "speeds": [
+                    "-7",
+                    "-10",
+                    "-12"
+                ]
+            }
+        ]
+    },
+    {
+        "family": "Zynq",
+        "devices": [
+            {
+                "device_name": "xc7z010",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc7z020",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc7z030",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc7z045",
+                "speeds": [
+                    "-3",
+                    "-2",
+                    "-1"
+                ]
+            },
+            {
+                "device_name": "xc7z100",
+                "speeds": [
+                    "-2",
+                    "-1"
+                ]
+            }
+        ]
+    }
+]

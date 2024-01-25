@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        Width="500"
+        Height="120"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+        x:Class="NetGenBox.UI.Settings"
+        WindowStartupLocation="CenterOwner"
+        Title="Settings">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <Grid ColumnDefinitions="Auto, *, Auto" Margin="4">
+            <Label Grid.Column="0" VerticalAlignment="Center">ISE Path</Label>
+            <TextBox Grid.Column="1" IsReadOnly="True" Watermark="ISE Path" Margin="10 10 10 10"></TextBox>
+            <Button Grid.Column="2" >Select ISE Path</Button>
+        </Grid>
+        <Button Name="CloseButton" Margin="10" Click="CloseButton_OnClick" Width="100" HorizontalContentAlignment="Center">Close</Button>
+    </StackPanel>
+</Window>

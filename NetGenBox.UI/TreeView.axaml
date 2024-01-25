@@ -1,0 +1,88 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="clr-namespace:NetGenBox.UI"
+        xmlns:xilinx="clr-namespace:NetGenBox;assembly=NetGenBox.Core"
+        xmlns:xilinx1="clr-namespace:NetGenBox.Core.Xilinx;assembly=NetGenBox.Core"
+        x:Class="NetGenBox.UI.TreeView"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:CompileBindings="False"
+        Title="TreeView">
+
+    <Window.DataContext>
+        <ui:TreeViewModel />
+    </Window.DataContext>
+
+    <TabControl Margin="5">
+        <TabItem Header="Cells">
+            <TreeDataGrid Source="{Binding CellsSource}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TreeDataGrid.Styles>
+                    <Style Selector="TreeDataGrid TreeDataGridRow">
+                        <Setter Property="BorderBrush" Value="DarkGray"></Setter>
+                        <Setter Property="BorderThickness" Value="2"></Setter>
+                    </Style>
+                    <Style Selector="TreeDataGrid TreeDataGridRow:nth-last-child(2n)">
+                        <Setter Property="Background" Value="#20808080" />
+                    </Style>
+                    <Style Selector="TreeDataGrid :is(TreeDataGridCell):nth-child(5)">
+                        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+                    </Style>
+                    <Style Selector="TreeDataGrid :is(TreeDataGridCell):nth-child(7)">
+                        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+                    </Style>
+                </TreeDataGrid.Styles>
+
+            </TreeDataGrid>
+        </TabItem>
+        <TabItem Header="Nets">
+            <TreeDataGrid Source="{Binding NetsSource}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="8">
+                <TreeDataGrid.Resources>
+
+                    <!-- Template for Name column cells -->
+                    <DataTemplate x:Key="NetName" DataType="xilinx1:Net">
+                        <TextBlock Text="{Binding NetName}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="8" FontWeight="Bold"></TextBlock>
+                    </DataTemplate>
+                    
+                    <DataTemplate x:Key="Ports" DataType="xilinx1:Net">
+                        <ListBox ItemsSource="{Binding PortReferences}" FontSize="16" FontStyle="Italic" Foreground="DarkRed" Background="Transparent"></ListBox>
+                    </DataTemplate>
+                    </TreeDataGrid.Resources>
+                
+                <TreeDataGrid.Styles>
+                    <Style Selector="TreeDataGrid TreeDataGridRow">
+                        <Setter Property="BorderBrush" Value="SteelBlue"></Setter>
+                        <Setter Property="Margin" Value="0 0 0 4"></Setter>
+                        <Setter Property="BorderThickness" Value="1"></Setter>
+                        <Setter Property="CornerRadius" Value="4"></Setter>
+                    </Style>
+                    <Style Selector="TreeDataGrid TreeDataGridRow:nth-child(2n)">
+                        <Setter Property="Background" Value="#20808080" />
+                    </Style>
+                 
+                </TreeDataGrid.Styles>
+                
+            </TreeDataGrid>
+        </TabItem>
+        <TabItem Header="Instances">
+            <TreeDataGrid Source="{Binding InstancesSource}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TreeDataGrid.Styles>
+                    <Style Selector="TreeDataGrid TreeDataGridRow">
+                        <Setter Property="BorderBrush" Value="DarkGray"></Setter>
+                        <Setter Property="BorderThickness" Value="2"></Setter>
+                    </Style>
+                    <Style Selector="TreeDataGrid TreeDataGridRow:nth-last-child(2n)">
+                        <Setter Property="Background" Value="#20808080" />
+                    </Style>
+                    <Style Selector="TreeDataGrid :is(TreeDataGridCell):nth-child(5)">
+                        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+                    </Style>
+                    <Style Selector="TreeDataGrid :is(TreeDataGridCell):nth-child(7)">
+                        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+                    </Style>
+                </TreeDataGrid.Styles>
+
+            </TreeDataGrid>
+        </TabItem>
+    </TabControl>
+</Window>

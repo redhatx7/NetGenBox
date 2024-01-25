@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:AvaloniaEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NetGenBox.UI.VerilogEdit"
+        Title="VerilogEdit">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Save" Name="SaveMenuItem" Click="SaveMenuItem_OnClick"></MenuItem>
+                <MenuItem Header="_Open"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Close"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Vertical" Margin="8" DockPanel.Dock="Top">
+            <TextBox Name="ReplacingMoudleNameTextBox" Watermark="Enter module name to replace in NetList generation" HorizontalAlignment="Stretch" TextChanged="TextBox_OnTextChanged"></TextBox>
+        </StackPanel>
+        <StackPanel Name="StatusBar" Background="Purple" Height="25" DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <TextBlock Foreground="White" Name="StatusText" Text="Ready" Margin="5 0 0 0" VerticalAlignment="Center" FontSize="12"/>
+        </StackPanel>
+        <Separator DockPanel.Dock="Top"/>
+        <AvaloniaEdit:TextEditor Name="Editor"
+                                 
+                               FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                               Margin="30"
+                               ShowLineNumbers="True"
+                               HorizontalScrollBarVisibility="Auto"
+                               VerticalScrollBarVisibility="Visible"
+                               FontWeight="Normal"
+                               FontSize="16" />
+    </DockPanel>
+</Window>

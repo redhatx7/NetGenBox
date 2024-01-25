@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="650"
+        x:Class="NetGenBox.UI.MainWindow"
+        Icon="Assets/xilicon.png"
+        Loaded="Control_OnLoaded"
+        WindowStartupLocation="CenterScreen"
+        Title="NetGenBox.UI">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open Files" Name="OpenFilesMenuItem" Click="OpenFilesMenuItem_OnClick"/>
+                <Separator/>
+                <MenuItem Header="_Exit" Name="ExitMenuItem" Click="ExitMenuItem_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="Settings" Name="SettingMenuItem" Click="SettingMenuItem_OnClick"/>
+                <MenuItem Header="Custom Modules" Name="CustomModuleMenuItem" Click="CustomModuleMenuItem_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="Tree View" Name="TreeViewMenuItem" Click="TreeViewMenuItem_OnClick"></MenuItem>
+                <MenuItem Header="Generate Verilog Netlist" Name="GenerateNetlistMenuItem" Click="GenerateNetlistMenuItem_OnClick"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="About" Name="AboutMenuItem" Click="AboutMenuItem_OnClick"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DockPanel DockPanel.Dock="Left" >
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Top" Width="200" Spacing="8" Margin="8" >
+                <Label> Top Instance</Label>
+                <ComboBox Name="VerilogTopInstanceCombo" HorizontalAlignment="Stretch" PlaceholderText="Select Top Module"></ComboBox>
+                <Label >Family</Label>
+                <ComboBox Name="IseFamilyCombo" HorizontalAlignment="Stretch" SelectionChanged="IseFamilyCombo_OnSelectionChanged">
+                </ComboBox>
+                <Label>Device</Label>
+                <ComboBox Name="IseDeviceCombo" HorizontalAlignment="Stretch" SelectionChanged="IseDeviceCombo_OnSelectionChanged"></ComboBox>
+                <Label Margin="0 10 0 0"> Selected Files</Label>
+                <ListBox Name="SelectedFilesListBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="150" CornerRadius="8" DoubleTapped="SelectedFilesListBox_OnDoubleTapped">  </ListBox>
+            </StackPanel>
+          <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Margin="16" Spacing="16">
+              <Button DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch"  Name="RunButton" Click="RunButton_OnClick">Run</Button>
+              <Button DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch" Name="GenerateEdifButton"  Click="GenerateEdifButton_OnClick">Generate EDIF</Button>
+          </StackPanel>
+        </DockPanel>
+        <DockPanel LastChildFill="True">
+            <Label DockPanel.Dock="Top">Output Logs</Label>
+            <ProgressBar IsIndeterminate="True" DockPanel.Dock="Top" Margin="8" IsVisible="False" Name="IseProgressBar"></ProgressBar>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox Name="StdOutTextBox" IsReadOnly="True" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" CornerRadius="8" Margin="4"
+                 Grid.Row="0" Watermark="Standard Output" ></TextBox>
+                <TextBox Name="StdErrTextBox" IsReadOnly="True" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" CornerRadius="8" Margin="4"
+                        Grid.Row="1" Watermark="Standard Error" Foreground="DarkRed" FontWeight="DemiBold"></TextBox>
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+</Window>
