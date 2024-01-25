@@ -27,15 +27,10 @@
         <AvaloniaResource Include="ise.json" />
     </ItemGroup>
     <ItemGroup>
-        <Content Update="Verilog.tmLanguage">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <None Remove="verilog.tmLanguage.json" />
+        <Content Include="verilog.tmLanguage.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-    </ItemGroup>
-    <ItemGroup>
-      <None Remove="Verilog.tmLanguage" />
-      <AdditionalFiles Include="Verilog.tmLanguage">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </AdditionalFiles>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\NetGenBox.Core\NetGenBox.Core.csproj" />
