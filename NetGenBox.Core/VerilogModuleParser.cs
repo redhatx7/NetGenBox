@@ -45,15 +45,8 @@ public class VerilogModule
 
 public class VerilogModuleParser
 {
-    private readonly string _module;
-
     
-    public VerilogModuleParser(string module)
-    {
-        _module = module;
-    }
-
-    public VerilogModule? ParseModule()
+    public static VerilogModule? ParseModule(string module)
     {
         // Pattern to match the module name and its ports
         string modulePattern = @"module\s+(\w+)\s*\((.*?)\);";
@@ -61,7 +54,7 @@ public class VerilogModuleParser
         string ioPattern = @"(input|output)\s*((?:\[\d+:\d+\])?\s*\w+)";
 
         // Find the module declaration
-        var moduleMatch = Regex.Match(_module, modulePattern);
+        var moduleMatch = Regex.Match(module, modulePattern);
         if (moduleMatch.Success)
         {
             
@@ -72,10 +65,10 @@ public class VerilogModuleParser
             };
 
             string ports = moduleMatch.Groups[2].Value;
-            verilogModule.IoDefinitions = ports.Split(',').ToList();
+            verilogModule.IoDefinitions = ports.Split(',').Select(t => t.TrimStart().TrimEnd()).ToList();
 
             // Find all input and output declarations
-            var matches = Regex.Matches(_module, ioPattern);
+            var matches = Regex.Matches(module, ioPattern);
             foreach (Match m in matches)
             {
                 var type = m.Groups[1].Value;

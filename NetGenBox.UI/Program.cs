@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using System;
 using Avalonia.Dialogs;
+using Avalonia.ReactiveUI;
 using Microsoft.Extensions.Configuration;
 
 namespace NetGenBox.UI;
@@ -21,5 +22,6 @@ class Program
             .UsePlatformDetect()
             .UseSkia()
             .WithInterFont()
+            .UseReactiveUI()
             .LogToTrace();
 }

@@ -42,15 +42,23 @@ public partial class MainWindow : Window
     public List<string> ModuleNames { get; set; }
 
     private string _edifFileName;
-    
+
+    private ProjectConfiguration? _projectConfiguration;
 
     public MainWindow()
     {
         InitializeComponent();
     }
 
-    private void CustomModuleMenuItem_OnClick(object? sender, RoutedEventArgs e)
+    private async void CustomModuleMenuItem_OnClick(object? sender, RoutedEventArgs e)
     {
+
+        var customModuleWindow = new CustomModules()
+        {
+            BasePath = Configuration["isePath"]
+        };
+        customModuleWindow.Show(this);
+        return;
         VerilogEdit verilogEdit = new VerilogEdit()
         {
             WorkDir = _selectedDirectory
@@ -256,7 +264,20 @@ public partial class MainWindow : Window
             var box = MessageBoxManager
                 .GetMessageBoxStandard("Result", "Synthesize completed successfully",
                     ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
-            await box.ShowWindowDialogAsync(this);
+            string customPath = "custommodules";
+            if (Directory.Exists(customPath))
+                Directory.CreateDirectory(Path.Combine(_selectedDirectory, customPath));
+            _projectConfiguration = new ProjectConfiguration()
+            {
+                BaseProject = _selectedDirectory,
+                VerilogFiles = _selectedFiles.Select(t => t.Name).ToList(),
+                EdifFile = "",
+                TopModule = VerilogTopInstanceCombo.SelectedItem.ToString() ?? "",
+                CustomModulePath = customPath
+            };
+            await _projectConfiguration.Save();
+            
+            await box.ShowAsPopupAsync(this);
         }
 
     }
@@ -307,11 +328,18 @@ public partial class MainWindow : Window
        
         if (result == 0)
         {
+            _edifFileName = _selectedDirectory + "/" + topModule + "_edif.ndf";
+            if (_projectConfiguration is not null)
+            {
+                _projectConfiguration.EdifFile = topModule + "_edif.ndf";
+                await _projectConfiguration.Save();
+            }
             var box = MessageBoxManager
                 .GetMessageBoxStandard("Result", "EDIF generation completed successfully",
                     ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
+            
             await box.ShowWindowDialogAsync(this);
-            _edifFileName = _selectedDirectory + "/" + topModule + "_edif.ndf";
+            
         }
     }
 
@@ -434,13 +462,60 @@ public partial class MainWindow : Window
         netGenBox.Parse();
         var verilogGenerator = new VerilogGenerator(netGenBox.Nets);
         var verilogFile = verilogGenerator.GenerateGateLevel();
-        var selectedModule = _fileContents[VerilogTopInstanceCombo?.SelectedValue as string];
-        var moduleParser = new VerilogModuleParser(selectedModule);
-        var module = moduleParser.ParseModule();
+        var selectedModule = string.Empty;
+        if (_fileContents.ContainsKey(VerilogTopInstanceCombo?.SelectedItem as string ?? "TP"))
+            selectedModule = _fileContents[VerilogTopInstanceCombo?.SelectedValue as string ?? "TP"];
+        else
+        {
+            var msgBox = MessageBoxManager.GetMessageBoxStandard("Warning",
+                "You didn't select top module, select top module verilog file", ButtonEnum.Ok,
+                MsBox.Avalonia.Enums.Icon.Warning);
+            await msgBox.ShowAsPopupAsync(this);
+            var topLevel = TopLevel.GetTopLevel(this);
+            var selectedFile = await topLevel.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+            {
+                Title = "Open Verilog Files",
+                AllowMultiple = false,
+                FileTypeFilter = new FilePickerFileType[]
+                {
+                    new FilePickerFileType("Verilog File | (*.v)")
+                    {
+                        Patterns = new []{"*.v"}
+                    }
+                },
+            });
+            if (selectedFile.Count != 1)
+                return;
+            selectedModule = await File.ReadAllTextAsync(selectedFile.First().Path.AbsolutePath);
+            _fileContents["TP"] = selectedModule;
+        }
+        var module = VerilogModuleParser.ParseModule(selectedModule);
         var codeViewer = new CodeViewer(module.ExportString(verilogFile))
         {
             Title = "NetList"
         };
         codeViewer.Show(this);
+    }
+
+    private async void OpenProjectMenuItem_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var topLevel = TopLevel.GetTopLevel(this);
+
+        var selectedFiles = await topLevel.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Open Project File",
+            AllowMultiple = false,
+            FileTypeFilter = new FilePickerFileType[]
+            {
+                new FilePickerFileType("Project Configuration File | (*.json)")
+                {
+                    Patterns = new []{"*.json"}
+                }
+            }
+        });
+        if (selectedFiles.Count == 1)
+        {
+            _projectConfiguration = await  ProjectConfiguration.ReadConfigAsync(selectedFiles.First().Path.AbsolutePath);
+        }
     }
 }

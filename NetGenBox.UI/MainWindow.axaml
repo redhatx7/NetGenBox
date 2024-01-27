@@ -11,7 +11,8 @@
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_Open Files" Name="OpenFilesMenuItem" Click="OpenFilesMenuItem_OnClick"/>
+                <MenuItem Header="_New Project Files" Name="OpenFilesMenuItem" Click="OpenFilesMenuItem_OnClick"/>
+                <MenuItem Header="_Open Project" Name="OpenProjectMenuItem" Click="OpenProjectMenuItem_OnClick"></MenuItem>
                 <Separator/>
                 <MenuItem Header="_Exit" Name="ExitMenuItem" Click="ExitMenuItem_OnClick"/>
             </MenuItem>
@@ -38,9 +39,10 @@
                 <ComboBox Name="IseDeviceCombo" HorizontalAlignment="Stretch" SelectionChanged="IseDeviceCombo_OnSelectionChanged"></ComboBox>
                 <Label Margin="0 10 0 0"> Selected Files</Label>
                 <ListBox Name="SelectedFilesListBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="150" CornerRadius="8" DoubleTapped="SelectedFilesListBox_OnDoubleTapped">  </ListBox>
+                <TextBlock Margin="0 10 0 0" TextWrapping="Wrap" Foreground="MediumBlue" FontStyle="Italic"> DoubleClick on file name to view code</TextBlock>
             </StackPanel>
           <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Margin="16" Spacing="16">
-              <Button DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch"  Name="RunButton" Click="RunButton_OnClick">Run</Button>
+              <Button DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch"  Name="RunButton" Click="RunButton_OnClick" >Save Project | Synthesis</Button>
               <Button DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch" Name="GenerateEdifButton"  Click="GenerateEdifButton_OnClick">Generate EDIF</Button>
           </StackPanel>
         </DockPanel>
