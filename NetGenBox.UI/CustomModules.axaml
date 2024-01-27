@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaEdit="https://github.com/avaloniaui/avaloniaedit"
+        xmlns:vm="clr-namespace:NetGenBox.UI"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="NetGenBox.UI.CustomModules"
+        Title="CustomModules"
+        x:DataType="vm:CustomModuleViewModel"
+        Loaded="Control_OnLoaded">
+        <Window.DataContext>
+                <vm:CustomModuleViewModel/>
+        </Window.DataContext>
+        <DockPanel LastChildFill="True">
+                <Menu DockPanel.Dock="Top">
+                        <MenuItem Header="_File">
+                                <MenuItem Header="_Load Modules"></MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="_Save" Name="SaveMenuItem" Click="SaveMenuItem_OnClick"></MenuItem>
+                </Menu>
+                <DockPanel LastChildFill="True" MaxWidth="300" DockPanel.Dock="Left" Margin="8" >
+                        <Label DockPanel.Dock="Top">Choose Modules (Xilinx unisim) to replace</Label>
+                        <TextBox DockPanel.Dock="Top" Name="TextBoxSearch" TextAlignment="Center"
+                                 Margin="0 0 0 10 "
+                                 Watermark="Search Module" Text="{Binding Mode=TwoWay, Path=FilterText}"></TextBox>
+                        <ListBox CornerRadius="4" ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                 ItemsSource="{Binding XilinxModules}"
+                                 DisplayMemberBinding="{Binding Path=ModuleName}"
+                                 SelectedValueBinding="{Binding}"
+                                 SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}"
+                                 SelectionChanged="SelectingItemsControl_OnSelectionChanged"
+                                 ></ListBox>
+                </DockPanel>
+                <StackPanel Orientation="Vertical" DockPanel.Dock="Right" Margin="8" MinWidth="200" Spacing="10">
+                        <Label Content="Enter Custom Module Name"></Label>
+                        <TextBox Watermark="Example: dff" Name="TextBoxCustomModuleName"></TextBox>
+                        <Button Content="Edit Custom Module" HorizontalAlignment="Center" Name="ButtonEditCustomModule" Click="ButtonEditCustomModule_OnClick"></Button>
+                        <Grid>
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" HorizontalAlignment="Left">Custom Pin</Label>
+                                <Label Grid.Column="1" HorizontalAlignment="Right">Original Pin</Label>
+                        </Grid>
+                        <ListBox ItemsSource="{Binding PinDefinitions}" BorderBrush="DarkCyan" CornerRadius="8">
+                                <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                                <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="{Binding Path=CustomPin}" VerticalAlignment="Center" FontStyle="Italic" 
+                                                                   FontWeight="Bold"></TextBlock>
+                                                        <ComboBox Grid.Column="1" ItemsSource="{Binding $parent[Window].((vm:CustomModuleViewModel)DataContext).OriginalModulePins}" HorizontalAlignment="Stretch"
+                                                                  SelectedValue="{Binding Path=$parent[ListBoxItem].((vm:IoDefinition)DataContext).OriginalPin}" VerticalAlignment="Stretch"></ComboBox>
+                                                </Grid>
+                                        </DataTemplate>
+                                </ListBox.ItemTemplate>
+                        </ListBox>
+                </StackPanel>
+               <Grid>
+                       <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                               <ColumnDefinition Width="*"></ColumnDefinition>
+                       </Grid.ColumnDefinitions>
+                       <avaloniaEdit:TextEditor Grid.Column="0" Name="OriginalModuleEditor" 
+                                                FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                                                Margin="8"
+                                                IsReadOnly="True"
+                                                ShowLineNumbers="True"
+                                                HorizontalScrollBarVisibility="Auto"
+                                                VerticalScrollBarVisibility="Visible"
+                                                FontWeight="Normal"
+                                                FontSize="16" />
+                       
+                       <avaloniaEdit:TextEditor Grid.Column="1" Name="CustomModuleEditor"
+                                                FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                                                Margin="8"
+                                                ShowLineNumbers="True"
+                                                HorizontalScrollBarVisibility="Auto"
+                                                VerticalScrollBarVisibility="Visible"
+                                                FontWeight="Normal"
+                                                TextChanged="CustomModuleEditor_OnTextChanged"
+                                                FontSize="16" />
+                    
+               </Grid>
+               
+        </DockPanel>
+</Window>
