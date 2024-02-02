@@ -17,23 +17,6 @@ public class ISEShell
     public async Task<int> CreateProject(string topModule, string workDir, List<string> files,
         Action<string>? stdOut = null, Action<string>? stdErr = null)
     {
-        string command;
-        
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-        {
-            command = ISEPath + "/bin/lin64/xtclsh";
-        }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            command = ISEPath + "/bin/lin64/xtclsh";
-        }
-        else
-        {
-            command = ISEPath + "/bin/lin64/xtclsh";
-        }
-        
-        string arguments = "/tmp/Project.tcl";
-
         string generateXfiles = "";
         files.ForEach(file => { generateXfiles += $"xfile add {file}\n"; });
 
@@ -49,12 +32,33 @@ public class ISEShell
             process run ""Synthesize - XST""
             project close
         ";
-        File.Delete("/tmp/*.ise");
-        await File.WriteAllTextAsync("/tmp/Project.tcl", args);
+
+        string command;
+        string tmpPath = "/tmp/";
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            command = ISEPath + "/bin/lin64/xtclsh";
+            //File.Delete("/tmp/*.ise");
+           
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            command = ISEPath + "/bin/nt64/xtclsh.exe";
+            tmpPath = Path.GetTempPath();
+        }
+        else
+        {
+            command = ISEPath + "/bin/lin64/xtclsh";
+            tmpPath = Path.GetTempPath();
+        }
+
+        string tmpFile = Path.Combine(tmpPath, "Project.tcl");
+        await File.WriteAllTextAsync(tmpFile, args);
+        
         ProcessStartInfo startInfo = new ProcessStartInfo
         {
             FileName = command,
-            Arguments = arguments,
+            Arguments = tmpFile,
             WorkingDirectory = workDir,
             RedirectStandardOutput = true,
             RedirectStandardError = true,
@@ -113,7 +117,7 @@ public class ISEShell
         }
         else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
-            command = ISEPath + "/bin/lin64/ngc2edif.exe";
+            command = ISEPath + "/bin/nt64/ngc2edif.exe";
         }
         else
         {
@@ -172,5 +176,91 @@ public class ISEShell
 
         await process.WaitForExitAsync(); // Wait for the process to finish
         return process.ExitCode;
+    }
+
+    public async Task<bool> GenerateXilinxFormatNetList(string ngdPath, string netgenPath,  bool overwrite, bool includeTestBench
+    , bool insertGlobalModule, bool dontEscapeName, bool flattenOutput)
+    {
+        string command;
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            command = ISEPath + "/bin/lin64/netgen";
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            command = ISEPath + "/bin/nt64/netgen.exe";
+        }
+        else
+        {
+            command = ISEPath + "/bin/lin64/ngc2edif";
+        }
+
+        string args = $"-sim -ism -ofmt verilog {(overwrite ? "-w" : "")} " +
+                      $"{(includeTestBench ? "-tb" : "")} " +
+                      $"{(flattenOutput ? "-fn" : "")} " +
+                      $"{(dontEscapeName ? "-ne" : "")} " +
+                      $"-insert_glbl {(insertGlobalModule ? "true" : "false")} " +
+                      $"{ngdPath} {netgenPath}";
+
+        string workDir = Path.GetDirectoryName(ngdPath);
+        
+        //Console.WriteLine(args);
+        
+        ProcessStartInfo startInfo = new ProcessStartInfo
+        {
+            FileName = command,
+            Arguments = args,
+            WorkingDirectory = workDir,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+
+        using Process process = new Process { StartInfo = startInfo };
+        process.Start();
+        //using StreamReader reader = process.StandardOutput;
+        await process.WaitForExitAsync();
+        //Console.WriteLine(await reader.ReadToEndAsync());
+        return process.ExitCode == 0;
+    }
+
+    public async Task<bool> NgdBuild(string ngcFile)
+    {
+        string workDir = Path.GetDirectoryName(ngcFile) ?? String.Empty;
+        string command;
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            command = ISEPath + "/bin/lin64/ngdbuild";
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            command = ISEPath + "/bin/nt64/ngdbuild.exe";
+        }
+        else
+        {
+            command = ISEPath + "/bin/lin64/ngdbuild";
+        }
+
+        string outputFileName = Path.GetFileNameWithoutExtension(ngcFile) + ".ngd";
+        string outputFilePath = Path.Combine(workDir, outputFileName);
+        string args = $"-sd {workDir} {ngcFile} {outputFilePath}";
+        ProcessStartInfo startInfo = new ProcessStartInfo
+        {
+            FileName = command,
+            Arguments = args,
+            WorkingDirectory = workDir,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+        
+        using Process process = new Process { StartInfo = startInfo };
+        process.Start();
+        using StreamReader reader = process.StandardOutput;
+        await process.WaitForExitAsync();
+        Console.WriteLine(await reader.ReadToEndAsync());
+        return process.ExitCode == 0;
     }
 }
