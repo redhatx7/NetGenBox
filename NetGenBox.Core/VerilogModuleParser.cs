@@ -22,7 +22,7 @@ public class VerilogModule
 
     public string ExportString(string moduleBody)
     {
-        string verilogCode = "module    ";
+        string verilogCode = $"module {ModuleName} ";
         verilogCode += $"( {string.Join(", ", IoDefinitions)} );\n\n";
         Inputs.ForEach(t =>
         {
