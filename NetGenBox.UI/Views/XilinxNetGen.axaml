@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:NetGenBox.UI"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="550"
+        x:Class="NetGenBox.UI.Views.XilinxNetGen"
+        x:DataType="vm:XilinxNetGenViewModel"
+        CanResize="False"
+        Width="650"
+        Height="550"
+        WindowStartupLocation="CenterOwner"
+        Title="XilinxNetGen">
+    <Design.DataContext>
+        <vm:XilinxNetGenViewModel/>
+    </Design.DataContext>
+    <DockPanel LastChildFill="False">
+        <StackPanel Orientation="Vertical" Margin="16 8 16 8" Spacing="4" DockPanel.Dock="Top">
+            <Label>NGD File Path</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Watermark="Ngd File Path" IsReadOnly="True" CornerRadius="8" Text="{Binding NgdFilePath}"></TextBox>
+                <Button Grid.Column="1" Command="{Binding SelectNgdFileCommand}" 
+                        Content="Select Ngd File" Width="140" HorizontalContentAlignment="Center" Margin="4 0 0 0" CornerRadius="8"></Button>
+            </Grid>
+            <Separator></Separator>
+            <CheckBox Content="Overwrite" IsChecked="{Binding Overwrite}"></CheckBox>
+            <CheckBox Content="Insert Global Module" IsChecked="{Binding InsertGlobalModule}"></CheckBox>
+            <CheckBox Content="Generate Test bench" IsChecked="{Binding GenerateTestBench}"></CheckBox>
+            <CheckBox Content="Do not escape names" IsChecked="{Binding DontEscapeNames}"></CheckBox>
+            <CheckBox Content="Flatten output netlist" IsChecked="{Binding FlattenOutputNetlist}"></CheckBox>
+            <Separator></Separator>
+            <Label>NetList File Path</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Watermark="Verilog Netgen file" IsReadOnly="True" CornerRadius="8" Text="{Binding NetgenFilePath}"></TextBox>
+                <Button Grid.Column="1" Content="Select Netgen File" Margin="4 0 0 0" CornerRadius="8" Width="140" HorizontalContentAlignment="Center"></Button>
+            </Grid>
+            <Separator></Separator>
+            <CheckBox Content="Add modified DFFs" IsChecked="{Binding AddModifiedDffs}" ></CheckBox>
+            <CheckBox Content="Add BIST pins to DFFs and Top Module" IsChecked="{Binding AddBistPins}" IsVisible="True"></CheckBox>
+        </StackPanel>
+        <Button CornerRadius="8" Content="Generate" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Width="350" HorizontalContentAlignment="Center"
+                Command="{Binding GenerateNetListCommand}" Margin="0 0 0 8"> 
+        </Button>
+    </DockPanel>
+</Window>
