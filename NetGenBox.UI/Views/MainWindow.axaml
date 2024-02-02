@@ -4,27 +4,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="650"
         x:Class="NetGenBox.UI.MainWindow"
-        Icon="Assets/xilicon.png"
+        Icon="/Assets/xilicon.png"
         Loaded="Control_OnLoaded"
         WindowStartupLocation="CenterScreen"
         Title="NetGenBox.UI">
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File">
-                <MenuItem Header="_New Project Files" Name="OpenFilesMenuItem" Click="OpenFilesMenuItem_OnClick"/>
-                <MenuItem Header="_Open Project" Name="OpenProjectMenuItem" Click="OpenProjectMenuItem_OnClick"></MenuItem>
+            <MenuItem Header="File">
+                <MenuItem Header="New Project Files" Name="OpenFilesMenuItem" Click="OpenFilesMenuItem_OnClick"/>
+                <MenuItem Header="Open Project" Name="OpenProjectMenuItem" Click="OpenProjectMenuItem_OnClick"></MenuItem>
                 <Separator/>
-                <MenuItem Header="_Exit" Name="ExitMenuItem" Click="ExitMenuItem_OnClick"/>
+                <MenuItem Header="Exit" Name="ExitMenuItem" Click="ExitMenuItem_OnClick"/>
             </MenuItem>
-            <MenuItem Header="_Edit">
+            <MenuItem Header="Edit">
                 <MenuItem Header="Settings" Name="SettingMenuItem" Click="SettingMenuItem_OnClick"/>
                 <MenuItem Header="Custom Modules" Name="CustomModuleMenuItem" Click="CustomModuleMenuItem_OnClick"/>
             </MenuItem>
-            <MenuItem Header="_View">
+            <MenuItem Header="Tools">
                 <MenuItem Header="Tree View" Name="TreeViewMenuItem" Click="TreeViewMenuItem_OnClick"></MenuItem>
-                <MenuItem Header="Generate Verilog Netlist" Name="GenerateNetlistMenuItem" Click="GenerateNetlistMenuItem_OnClick"></MenuItem>
+                <MenuItem Header="Generate Netlist (Built-in)" Name="GenerateNetlistMenuItem" Click="GenerateNetlistMenuItem_OnClick"></MenuItem>
+                <MenuItem Header="Generate Netlist (Xilinx)" Name="GenerateXilinxNetListMenuItem" Click="GenerateXilinxNetListMenuItem_OnClick"></MenuItem>
             </MenuItem>
-            <MenuItem Header="_Help">
+            <MenuItem Header="Help">
                 <MenuItem Header="About" Name="AboutMenuItem" Click="AboutMenuItem_OnClick"></MenuItem>
             </MenuItem>
         </Menu>

@@ -21,6 +21,8 @@ using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Enums;
 using MsBox.Avalonia.Models;
 using NetGenBox.Core;
+using NetGenBox.UI.Views;
+
 
 namespace NetGenBox.UI;
 
@@ -64,6 +66,7 @@ public partial class MainWindow : Window
             WorkDir = _selectedDirectory
         };
         verilogEdit.ShowDialog(this);
+        
        
     }
 
@@ -253,14 +256,16 @@ public partial class MainWindow : Window
                     StdErrTextBox.CaretIndex = StdErrTextBox.Text.Length;
                 });
             } );
+        var netgen = await iseShell.NgdBuild(Path.Combine(_selectedDirectory, topModule + ".ngc"));
         IseProgressBar.IsIndeterminate = false;
         IseProgressBar.Value = 100;
         
        
 
        
-        if (result == 0)
+        if (result == 0 && netgen == true)
         {
+            
             var box = MessageBoxManager
                 .GetMessageBoxStandard("Result", "Synthesize completed successfully",
                     ButtonEnum.Ok, MsBox.Avalonia.Enums.Icon.Success);
@@ -517,5 +522,11 @@ public partial class MainWindow : Window
         {
             _projectConfiguration = await  ProjectConfiguration.ReadConfigAsync(selectedFiles.First().Path.AbsolutePath);
         }
+    }
+
+    private async void GenerateXilinxNetListMenuItem_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var xilinxNetGenView = new XilinxNetGen();
+        await xilinxNetGenView.ShowDialog(this);
     }
 }

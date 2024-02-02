@@ -113,105 +113,82 @@ public class VerilogGenerator
     
      private static void ParseBuf(VerilogInstance instance, PortReference portRef, string netName)
     {
-        if (portRef.PortName == "I" && instance.Inputs.Count == 0)
+        if (portRef.PortName == "I" || portRef.PortName == "O" )
         {
-            instance.Inputs.Add(portRef.PortName, netName);
+            instance.Pins.TryAdd(portRef.PortName, netName);
         }
-        else if (portRef.PortName == "O" && instance.Outputs.Count == 0)
-        {
-            instance.Outputs.Add(portRef.PortName,netName);
-        }
+       
     }
 
     // module FDCE (Q, C, CE, CLR, D);
     private static void ParseFdce(VerilogInstance instance, PortReference portRef, string netName)
     {
         if (portRef.PortName == "D" || portRef.PortName == "C" 
-                                    || portRef.PortName == "CLR" || portRef.PortName == "CE")
+                                    || portRef.PortName == "CLR" || portRef.PortName == "CE" || portRef.PortName == "Q")
         {
-            instance.Inputs.Add(portRef.PortName, netName);
+            instance.Pins.TryAdd(portRef.PortName, netName);
         }
-        else if (portRef.PortName == "Q" && instance.Outputs.Count == 0)
-        {
-            instance.Outputs.Add(portRef.PortName,netName);
-        }
+       
     }
 
     // module LDCP (Q, CLR, D, G, PRE)
     private static void ParseLdcp(VerilogInstance instance, PortReference portRef, string netName)
     {
         if (portRef.PortName == "D"
-            || portRef.PortName == "CLR" || portRef.PortName == "PRE")
+            || portRef.PortName == "CLR" || portRef.PortName == "PRE" || portRef.PortName == "Q" )
         {
-            instance.Inputs.Add(portRef.PortName, netName);
+            instance.Pins.TryAdd(portRef.PortName, netName);
         }
         else if (portRef.PortName == "G" )
         {
-            instance.Inputs.Add("CE", netName);
+            instance.Pins.TryAdd("CE", netName);
         }
-        else if (portRef.PortName == "Q" && instance.Outputs.Count == 0)
-        {
-            instance.Outputs.Add(portRef.PortName,netName);
-        }
+      
     }
 
     private static void ParseInv(VerilogInstance instance, PortReference portRef, string netName)
     {
-        if (portRef.PortName == "I" && instance.Inputs.Count == 0)
+        if (portRef.PortName == "I" || portRef.PortName == "O" )
         {
-            instance.Inputs.Add(portRef.PortName, netName);
+            instance.Pins.TryAdd(portRef.PortName, netName);
         }
-        else if (portRef.PortName == "O" && instance.Outputs.Count == 0)
-        {
-            instance.Outputs.Add(portRef.PortName,netName);
-        }
+     
     }
 
     //(Q, D, C, CLR, PRE, CE)
     private static void ParseLd(VerilogInstance instance, PortReference portRef, string netName)
     {
         //(Q, CLR, D, G, GE);
-        if (instance.Inputs.Count == 0)
+        if (instance.Pins.Count == 0)
         {
-            instance.Inputs.Add("CLR", "1'b0");
-            instance.Inputs.Add("PRE", "1'b0");
-            instance.Inputs.Add("CE", "1'b1");
+            instance.Pins.Add("CLR", "1'b0");
+            instance.Pins.Add("PRE", "1'b0");
+            instance.Pins.Add("CE", "1'b1");
         }
-        if (portRef.PortName == "D" || portRef.PortName == "G")
+        if (portRef.PortName == "D" || portRef.PortName == "G" || portRef.PortName == "Q")
         {
-            instance.Inputs.Add(portRef.PortName, netName);
+            instance.Pins.TryAdd(portRef.PortName, netName);
         }
-        else if (portRef.PortName == "Q" && instance.Outputs.Count == 0)
-        {
-            instance.Outputs.Add(portRef.PortName,netName);
-        }
+        
     }
 
     private static void ParseFd(VerilogInstance instance, PortReference portRef, string netName)
     {
-        if (instance.Inputs.Count == 0)
+        if (instance.Pins.Count == 0)
         {
-            instance.Inputs.Add("CE", "1'b1");
+            instance.Pins.Add("CE", "1'b1");
         }
-        if (portRef.PortName == "C" || portRef.PortName == "D")
+        if (portRef.PortName == "C" || portRef.PortName == "D" || portRef.PortName == "Q")
         {
-            instance.Inputs.Add(portRef.PortName, netName);
-        }
-        else if (portRef.PortName == "Q" && instance.Outputs.Count == 0)
-        {
-            instance.Outputs.Add(portRef.PortName,netName);
+            instance.Pins.Add(portRef.PortName, netName);
         }
     }
 
     private static void ParseAndOr(VerilogInstance instance, PortReference portRef, string netName)
     {
-        if (portRef.PortName.StartsWith("I"))
+        if (portRef.PortName.StartsWith("I") || portRef.PortName == "O" )
         {
-            instance.Inputs.Add(portRef.PortName, netName);
-        }
-        else if(portRef.PortName == "O" && instance.Outputs.Count == 0)
-        {
-            instance.Outputs.Add(portRef.PortName,netName);
+            instance.Pins.TryAdd(portRef.PortName, netName);
         }
     }
 }

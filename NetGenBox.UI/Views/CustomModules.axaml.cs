@@ -109,10 +109,9 @@ public partial class CustomModules : Window
 
     private async void SaveMenuItem_OnClick(object? sender, RoutedEventArgs e)
     {
-        
-        var topLevel = TopLevel.GetTopLevel(this);
 
-        // Start async operation to open the dialog.
+        var topLevel = TopLevel.GetTopLevel(this);
+        
         var selectedFile = await topLevel.StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
         {
             Title = "Open Verilog Files",
